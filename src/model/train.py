@@ -13,7 +13,6 @@ from sklearn.linear_model import LogisticRegression
 def main(args):
     # TO DO: enable autologging
 
-
     # read data
     df = get_csvs_df(args.training_data)
 
@@ -33,7 +32,14 @@ def get_csvs_df(path):
     return pd.concat((pd.read_csv(f) for f in csv_files), sort=False)
 
 
-# TO DO: add function to split data
+def split_data(df):
+    # split data
+    X_train = df.drop("target", axis=1)
+    y_train = df["target"]
+    X_test = df.drop("target", axis=1)
+    y_test = df["target"]
+
+    return X_train, X_test, y_train, y_test
 
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
@@ -56,6 +62,7 @@ def parse_args():
 
     # return args
     return args
+
 
 # run script
 if __name__ == "__main__":
