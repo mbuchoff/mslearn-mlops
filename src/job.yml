@@ -9,6 +9,6 @@ inputs:
     path: azureml:diabetes-dev-folder:2
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: mbuchoff-compute
+compute: mbuchoff-compute-cluster
 experiment_name: omg-its-alive
 description: this-is-a-description

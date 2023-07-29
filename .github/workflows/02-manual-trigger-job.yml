@@ -17,6 +17,6 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Install az ml extension
       run: az extension add -n ml -y
-    - name: Do yo thang
-      run: az ml job create --file src/job.yml --resource-group rg-github-challenge --workspace-name ml-github-challenge --name saymyname
-
+    - name: Trigger Azure Machine Learning job
+      run: |
+        az ml job create --file src/job.yml --resource-group rg-github-challenge --workspace-name ml-github-challenge
